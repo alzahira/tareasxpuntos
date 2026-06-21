@@ -1,4 +1,4 @@
-# AppAitor (A99 Calendar) 📅✨
+# Tareas x Puntos 📅✨
 
 Una **Progressive Web App (PWA)** moderna diseñada como un sistema de economía de fichas (gamificación) para gestionar tareas del hogar y motivar con un sistema de recompensas.
 
