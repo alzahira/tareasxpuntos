@@ -1,0 +1,39 @@
+:root {
+  /* Paleta de Colores Vibrantes */
+  --color-primary: #FF6B6B; /* Rojo coral */
+  --color-secondary: #4ECDC4; /* Turquesa */
+  --color-accent: #FFE66D; /* Amarillo */
+  --color-background: #F7FFF7; /* Blanco menta */
+  --color-text: #292F36; /* Gris oscuro */
+  --color-success: #95E1D3; /* Verde menta */
+  --color-card-bg: #FFFFFF;
+
+  /* Espaciado y Bordes */
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  
+  /* Fuentes */
+  --font-main: 'Fredoka', sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
