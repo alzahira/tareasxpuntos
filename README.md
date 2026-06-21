@@ -1,16 +1,49 @@
-# React + Vite
+# AppAitor (A99 Calendar) 📅✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una **Progressive Web App (PWA)** moderna diseñada como un sistema de economía de fichas (gamificación) para gestionar tareas del hogar y motivar con un sistema de recompensas.
 
-Currently, two official plugins are available:
+## 🚀 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Gestión de Tareas (Economía de Fichas):** Tareas divididas en "Obligatorias" y "Bonus", con frecuencias diarias y semanales.
+- **Tienda de Recompensas:** Los puntos ganados pueden canjearse por premios reales o virtuales configurables.
+- **Progreso Semanal:** Seguimiento visual del progreso con una meta de puntos.
+- **Historial Diario:** Calendario integrado que guarda lo realizado en los últimos 7 días.
+- **Sincronización en la Nube:** Conectado en tiempo real a **Supabase** (PostgreSQL) para compartir el progreso entre múltiples dispositivos.
+- **Animaciones y UX:** Celebraciones con confeti y feedback visual inmediato (Actualizaciones Optimistas).
+- **Instalable (PWA):** Funciona como aplicación nativa en iOS, Android y Escritorio sin pasar por las tiendas de aplicaciones.
 
-## React Compiler
+## 🛠️ Stack Tecnológico
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 19 + Vite
+- **Estilos:** Vanilla CSS moderno + Lucide React (Iconos)
+- **Backend / Base de Datos:** Supabase (PostgreSQL)
+- **PWA:** vite-plugin-pwa
 
-## Expanding the ESLint configuration
+## ⚙️ Instalación y Uso Local
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+2. Configura las variables de entorno:
+   Crea un archivo `.env` en la raíz del proyecto y añade tus credenciales de Supabase:
+   ```env
+   VITE_SUPABASE_URL=tu_url_de_supabase
+   VITE_SUPABASE_ANON_KEY=tu_clave_anon_public
+   ```
+
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+## 🗄️ Esquema de la Base de Datos
+
+El proyecto utiliza 3 tablas simples en Supabase:
+- `tasks`: Almacena la configuración de las tareas.
+- `rewards`: Almacena la configuración y el coste de los premios.
+- `app_state`: Tabla clave-valor (JSONB) utilizada para guardar los puntos totales y el historial de acciones de cada día de manera robusta.
+
+## 🔒 Seguridad
+Actualmente el proyecto utiliza Row Level Security (RLS) configurado para acceso público (`using (true)`), ideal para un uso en entornos familiares privados sin necesidad de gestión de usuarios/logins.
